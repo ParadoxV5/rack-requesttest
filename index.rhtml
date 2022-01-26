@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,"> <!-- No favicon -->
+    <title><%=h title %></title>
+    <style>
+      body {
+        white-space: pre-line;
+        text-align: center;
+        font-family: monospace;
+      }
+      table { margin: auto; }
+      caption { width: max-content; }
+      td { border-top: solid thin; }
+    </style>
+  </head>
+  <body>
+    <h1><%=h title %></h1>
+    
+    <% unless get_params.empty? %><table>
+      <caption><h2>Parameters from the Query String</h2></caption>
+      <thead>
+        <th>Key</th>
+        <th>Value</th>
+      </thead>
+      <% get_params.each do |key, value| %><tr>
+        <td><%=h key %></td>
+        <td><%=h value %></td>
+      </tr><% end %>
+    </table><% end %>
+    
+    <% unless post_params.empty? %><table>
+      <caption><h2>Parameters from the Request Body</h2></caption>
+      <thead>
+        <th>Key</th>
+        <th>Value</th>
+      </thead>
+      <% post_params.each do |key, value| %><tr>
+        <td><%=h key %></td>
+        <td><%=h value %></td>
+      </tr><% end %>
+    </table><% end %>
+  </body>
+</html>
