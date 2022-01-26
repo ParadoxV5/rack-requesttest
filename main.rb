@@ -13,7 +13,7 @@ def h(param_value)
   end
 end
 
-RHTML = ERB.new(File.read('index.rhtml'))
+RHTML = ERB.new(File.read('index.html.erb'))
 
 begin
   server = Thin::Server.new(ENV['PORT'], lambda do |env|
