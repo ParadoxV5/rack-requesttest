@@ -16,7 +16,7 @@ end
 RHTML = ERB.new(File.read('index.rhtml'))
 
 begin
-  server = Thin::Server.new(80, lambda do |env|
+  server = Thin::Server.new(443, lambda do |env|
     req = Rack::Request.new(env)
     
     res = Rack::Response.new(RHTML.result_with_hash(
