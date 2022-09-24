@@ -1,5 +1,6 @@
-source 'https://rubygems.org'
 ruby '>= 2'
-gem 'rack'
-gem 'thin'
-gem 'erb'
+
+source 'https://rubygems.org'
+gem 'rack', '~> 2.2.0'
+gem 'thin', '~> 1.8.0'
+gem 'erb', '~> 2.2.0'
